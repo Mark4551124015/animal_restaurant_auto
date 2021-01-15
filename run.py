@@ -7,9 +7,14 @@ import garden
 import kitchen
 import move
 import base
+import os
+import sys 
+
 
 def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
-  print('开始咯...')
+  print(' ')
+  print('开始咯...，按下空格键暂停')
+  print(' ')
   #归位
   move.toLeft()
   move.toLeft()
@@ -39,9 +44,21 @@ def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
       garden.sowFlower(mouseMoveSpeed)
       move.toRight()
 
+
+def stop():
+        keyboard.wait('p')
+        os.system("pause")
+
+check=2
 if __name__=='__main__':
-  p1 = multiprocessing.Process(target=run,args=())
-  p1.start() 
-  print('按下空格键退出程序') 
-  keyboard.wait('space')
-  p1.terminate()
+  while check!=1:
+      print('按下空格键，开始/继续') 
+      keyboard.wait('space')
+      p1 = multiprocessing.Process(target=run,args=())
+      p1.start()
+      keyboard.wait('space')
+      print(' ')
+      print('已暂停')
+      p1.terminate()
+      print(' ')
+      

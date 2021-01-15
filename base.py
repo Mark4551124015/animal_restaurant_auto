@@ -2,6 +2,8 @@ import win32gui
 import keyboard
 import multiprocessing
 import sys
+import time
+
 
 def get_hwnd():
     return win32gui.FindWindow(None, '动物餐厅')
