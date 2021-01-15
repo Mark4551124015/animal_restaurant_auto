@@ -7,7 +7,6 @@ import garden
 import kitchen
 import move
 import base
-import os
 import sys 
 
 
@@ -45,9 +44,6 @@ def run(count = 50000, publicCityClickCount = 64, mouseMoveSpeed = 0.1):
       move.toRight()
 
 
-def stop():
-        keyboard.wait('p')
-        os.system("pause")
 
 check=2
 if __name__=='__main__':
