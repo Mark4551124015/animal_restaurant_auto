@@ -73,5 +73,5 @@ def fuckFox(mouseMoveSpeed):
 #  
 def locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed):
   pyautogui.moveTo(publicCityClickPosition[0], publicCityClickPosition[1], mouseMoveSpeed)
-  for i in range(random.randint(1, publicCityClickCount)):
+  for i in range(random.randint(20, publicCityClickCount)):
     pyautogui.click()
