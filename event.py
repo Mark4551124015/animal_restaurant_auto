@@ -20,7 +20,6 @@ def fuck_fox():
         time.sleep(0.1)
 
 def fuck_bird():
-    time.sleep(5)
     i=0
     while i < 10:
         i=i+1
@@ -29,7 +28,6 @@ def fuck_bird():
         time.sleep(0.1)
 
 def fuck_tv():
-    time.sleep(5)
     o, tv_x, tv_y = base.scan('tv')
     tv_x = tv_y + x
     tv_y = tv_y + y
