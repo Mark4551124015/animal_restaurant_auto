@@ -24,11 +24,7 @@ def fuck_bird():
     i=0
     while i < 10:
         i=i+1
-        o, bird_x, bird_y = base.scan('bird')
-        bird_x=bird_x + x
-        bird_y=bird_y + y
-        pyautogui.moveTo(bird_x ,bird_y,0.3)
-        pyautogui.click()
+        pyautogui.moveTo(340+x ,260+y,0.3)
         pyautogui.click()
         time.sleep(0.1)
 
@@ -59,18 +55,24 @@ def fuck_fine():
     pyautogui.click()
 
 def fuck_crow():
-    pyautogui.moveTo(379 + x, 265 + y, 0.3)
+    pyautogui.moveTo(388 + x, 266 + y, 0.3)
+    time.sleep(0.1)
     pyautogui.click()
+    time.sleep(0.1)
     pyautogui.moveTo(no[0], no[1],0.3)
+    pyautogui.click()
+    time.sleep(0.1)
     pyautogui.click()
 
 
 def fuck_rat():
     pyautogui.moveTo(169+x, 349+y, 0.3)
     pyautogui.click()
-    time.sleep(0.5)
+    time.sleep(0.2)
     pyautogui.click()
-    time.sleep(0.5)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(0.2)
     pyautogui.moveTo(yes[0], yes[1], 0.3)
     time.sleep(0.5)
     pyautogui.moveTo(120+x,300+y,0.3)
