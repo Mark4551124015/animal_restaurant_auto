@@ -19,7 +19,7 @@ def fuck_fox():
 def fuck_bird():
     pyautogui.moveTo(340 + x, 260 + y, 0.3)
     i=0
-    while i < 15:
+    while i < 20:
         i=i+1
         pyautogui.click()
         time.sleep(0.1)
