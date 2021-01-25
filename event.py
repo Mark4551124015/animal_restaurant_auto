@@ -1,23 +1,29 @@
 import base
 import pyautogui
 import time
+import move
 
 x ,y, r, b = base.first()
-no = [135+x,725+y]
-yes = [310+x,725+y]
-salesmanPosition = [149+x,728+y]
+no = [135,725]
+yes = [310,725]
+foxPosition = [130,365]
+birdPosition = [340, 260]
+tvPosition = [350,310]
+crowPositon = [388,266]
+ratPosition = [169, 349]
+witchPosition = [396, 271]
 
 def fuck_fox():
     time.sleep(2)
     i = 0
+    move.click(foxPosition[0], foxPosition[1])
     while i < 10:
         i = i + 1
-        pyautogui.moveTo(130+x,365+y,0.3)
         pyautogui.click()
         time.sleep(0.1)
 
 def fuck_bird():
-    pyautogui.moveTo(340 + x, 260 + y, 0.3)
+    move.click(birdPosition[0],birdPosition[1])
     i=0
     while i < 20:
         i=i+1
@@ -25,11 +31,7 @@ def fuck_bird():
         time.sleep(0.1)
 
 def fuck_tv():
-    o, tv_x, tv_y = base.scan('tv')
-    tv_x = tv_y + x
-    tv_y = tv_y + y
-    pyautogui.moveTo(tv_x, tv_y,0.3)
-    pyautogui.click()
+    move.click(tvPosition[0], tvPosition[1])
     time.sleep(0.5)
     adv()
 
@@ -40,55 +42,47 @@ def fuck_panda():
         o, panda_x, panda_y = base.scan('panda')
         panda_x=panda_x+x
         panda_y=panda_y+y
-        pyautogui.moveTo(panda_x,panda_y,0.3)
-        pyautogui.click()
-        pyautogui.click()
+        move.click(panda_x,panda_y)
         time.sleep(0.1)
 
 def fuck_fine():
-    pyautogui.moveTo(214+x, 545+y,0.3)
-    pyautogui.click()
+    move.click(214, 545)
+    time.sleep(0.1)
+    move.click(340, 556)
 
 def fuck_crow():
-    pyautogui.moveTo(388 + x, 266 + y, 0.3)
+    move.click(crowPositon[0], crowPositon[1])
     time.sleep(0.1)
-    pyautogui.click()
-    time.sleep(0.1)
-    pyautogui.moveTo(no[0], no[1],0.3)
+    move.click(no[0], no[1])
     pyautogui.click()
     time.sleep(0.1)
     pyautogui.click()
 
 
 def fuck_rat():
-    pyautogui.moveTo(169+x, 349+y, 0.3)
-    pyautogui.click()
+    move.click(ratPosition[0], ratPosition[1])
     time.sleep(0.2)
     pyautogui.click()
     time.sleep(0.2)
     pyautogui.click()
     time.sleep(0.2)
-    pyautogui.moveTo(yes[0], yes[1], 0.3)
-    time.sleep(0.2)
+    move.click(yes[0], yes[1])
     pyautogui.click()
     time.sleep(0.2)
-    pyautogui.moveTo(120+x,300+y,0.3)
+    move.click(120,300)
 
 def fuck_witch():
-    pyautogui.moveTo(396 + x, 271 + y, 0.3)
-    pyautogui.click()
+    move.click(witchPosition[0], witchPosition[1])
     adv()
 
 def adv():
-  pyautogui.moveTo(yes[0], yes[1], 0.3)
-  pyautogui.click()
+  move.click(yes[0], yes[1])
   time.sleep(0.1)
   pyautogui.moveTo(x+370, y+75, 0.3)
   time.sleep(1)
   pyautogui.click()
   time.sleep(31)
-  pyautogui.moveTo(x+410, y+75, 0.3)
-  pyautogui.click()
+  move.click(410, 75)
   time.sleep(0.5)
   pyautogui.click()
   time.sleep(0.5)

@@ -3,6 +3,7 @@ import random
 import pyautogui
 import base
 import event
+import move
 x ,y, r, b = base.first()
 
 
@@ -14,10 +15,6 @@ orderPositions = [
   [240, 530],
   [340, 530]
 ]
-for origin in orderPositions:
-    origin[0]=origin[0] + x
-    origin[1]=origin[1] + y
-    
 
 driedFishPosition = [
   [200, 400],
@@ -33,47 +30,40 @@ driedFishPosition = [
   [220, 620],
   [220, 620]
 ]
-for origin in driedFishPosition:
-    origin[0]=origin[0] + x
-    origin[1]=origin[1] + y
 
 
-salesmanPosition = [149+x,728+y]
-foxPosition = [130+x, 370+y]
-publicCityClickPosition=[412+x,788+y]
+foxPosition = [130, 370]
+publicCityClickPosition=[412,788]
 
 
 
 # 点菜
-def orderDishes(mouseMoveSpeed):
+def orderDishes():
   time.sleep(random.randint(0, 3))
   for items in orderPositions:
-    pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
-    pyautogui.click()
+    move.click(items[0], items[1])
 
 # 拾取鱼干
-def pickUpDriedFish(mouseMoveSpeed):
+def pickUpDriedFish():
   for items in driedFishPosition:
-    pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
-    pyautogui.click()
+    move.click(items[0], items[1])
 
 # 去nm的臭鼬
-def fuckFox(mouseMoveSpeed):
-  pyautogui.moveTo(foxPosition[0], foxPosition[1], mouseMoveSpeed)
+def fuckFox():
+  move.click(foxPosition[0], foxPosition[1])
   for i in range(20):
     pyautogui.click()
 
-#  
-def locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed):
-  pyautogui.moveTo(publicCityClickPosition[0], publicCityClickPosition[1], mouseMoveSpeed)
+# 宣传按钮
+def locateToPublicCityClick(publicCityClickCount):
+  move.click(publicCityClickPosition[0], publicCityClickPosition[1])
   for i in range(random.randint(1, publicCityClickCount)):
       pyautogui.click()
       time.sleep(0.1)
-#  event.fuck_fine()
   check_event()
 
 
-
+#检查特殊任务
 def check_event():
   event.fuck_fine()
   base.get_screen_img()

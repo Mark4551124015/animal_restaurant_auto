@@ -17,15 +17,13 @@ rat_count  = 0
 crow_count = 0
 times=0
 
-
-mouseMoveSpeed = 0.1
 def run(count = 50000, publicCityClickCount = 64):
   print('开始咯...')
   win32gui.SetForegroundWindow(win32gui.FindWindow(None, '动物餐厅'))
   for times in range(count):
-    restaurant.locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed)
-    restaurant.orderDishes(mouseMoveSpeed)
-    restaurant.pickUpDriedFish(mouseMoveSpeed)
+    restaurant.locateToPublicCityClick(publicCityClickCount)
+    restaurant.orderDishes()
+    restaurant.pickUpDriedFish()
     if (times + 1) % 10 == 0:
       allfries()
       time.sleep(random.randint(5, 30))
@@ -37,11 +35,11 @@ def run(count = 50000, publicCityClickCount = 64):
 def allfries():
     move.toRight()
     time.sleep(0.2)
-    kitchen.pickUpDriedFish(mouseMoveSpeed=mouseMoveSpeed)
+    kitchen.pickUpDriedFish()
     move.toLeft()
     move.toLeft()
     time.sleep(0.2)
-    garden.pickUpDriedFish(mouseMoveSpeed=mouseMoveSpeed)
+    garden.pickUpDriedFish()
     move.toRight()
 
 def flowers():
