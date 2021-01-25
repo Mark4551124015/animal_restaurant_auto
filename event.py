@@ -8,22 +8,19 @@ yes = [310+x,725+y]
 salesmanPosition = [149+x,728+y]
 
 def fuck_fox():
+    time.sleep(2)
     i = 0
     while i < 10:
         i = i + 1
-        o, fox_x, fox_y = base.scan('fox')
-        fox_x=fox_x+x
-        fox_y=fox_y+y
-        pyautogui.moveTo(fox_x,fox_y,0.3)
-        pyautogui.click()
+        pyautogui.moveTo(130+x,365+y,0.3)
         pyautogui.click()
         time.sleep(0.1)
 
 def fuck_bird():
+    pyautogui.moveTo(340 + x, 260 + y, 0.3)
     i=0
-    while i < 10:
+    while i < 15:
         i=i+1
-        pyautogui.moveTo(340+x ,260+y,0.3)
         pyautogui.click()
         time.sleep(0.1)
 
@@ -72,7 +69,9 @@ def fuck_rat():
     pyautogui.click()
     time.sleep(0.2)
     pyautogui.moveTo(yes[0], yes[1], 0.3)
-    time.sleep(0.5)
+    time.sleep(0.2)
+    pyautogui.click()
+    time.sleep(0.2)
     pyautogui.moveTo(120+x,300+y,0.3)
 
 def fuck_witch():
@@ -84,8 +83,6 @@ def adv():
   pyautogui.moveTo(yes[0], yes[1], 0.3)
   pyautogui.click()
   time.sleep(0.1)
-  pyautogui.moveTo(x+220, y+550, 0.3)
-  pyautogui.click()
   pyautogui.moveTo(x+370, y+75, 0.3)
   time.sleep(1)
   pyautogui.click()

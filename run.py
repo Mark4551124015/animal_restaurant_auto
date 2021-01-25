@@ -8,28 +8,28 @@ import kitchen
 import move
 import base
 import event
-import sys
+import win32gui
+
+witch_count=0
+bird_count=0
+tv_count=0
+rat_count  = 0
+crow_count = 0
+times=0
 
 
 mouseMoveSpeed = 0.1
 def run(count = 50000, publicCityClickCount = 64):
   print('开始咯...')
-  # #归位
-  # move.toLeft()
-  # move.toLeft()
-  # move.toLeft()
-  # move.toLeft()
-  # move.toRight()
-  # move.toRight()
-  #开始循环
-  for i in range(count):
+  win32gui.SetForegroundWindow(win32gui.FindWindow(None, '动物餐厅'))
+  for times in range(count):
     restaurant.locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed)
     restaurant.orderDishes(mouseMoveSpeed)
     restaurant.pickUpDriedFish(mouseMoveSpeed)
-    if (i + 1) % 10 == 0:
+    if (times + 1) % 10 == 0:
       allfries()
       time.sleep(random.randint(5, 30))
-    if (i + 1) % 51 == 0:
+    if (times + 1) % 51 == 0:
       flowers()
 
 
@@ -60,8 +60,13 @@ if __name__=='__main__':
   print('按下空格键退出程序') 
   keyboard.wait('space')
   p1.terminate()
-  print('再按一下关闭')
+  print('本次结果')
+  # print('老鼠' + str(rat_count) + '只')
+  # print('歌手' + str(bird_count) + '只')
+  # print('魔法师' + str(witch_count) + '只')
+  # print('商人' + str(crow_count) + '只')
+  # print('小电视' + str(tv_count) + '只')
+  # print('循环'+str(times))
   keyboard.wait('space')
-
 
 

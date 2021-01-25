@@ -57,11 +57,6 @@ def pickUpDriedFish(mouseMoveSpeed):
     pyautogui.moveTo(items[0], items[1], mouseMoveSpeed)
     pyautogui.click()
 
-# 干掉推销员
-def closeYourMic(mouseMoveSpeed):
-  pyautogui.moveTo(salesmanPosition[0], salesmanPosition[1], mouseMoveSpeed)
-  pyautogui.click()
-
 # 去nm的臭鼬
 def fuckFox(mouseMoveSpeed):
   pyautogui.moveTo(foxPosition[0], foxPosition[1], mouseMoveSpeed)
@@ -74,7 +69,7 @@ def locateToPublicCityClick(publicCityClickCount, mouseMoveSpeed):
   for i in range(random.randint(1, publicCityClickCount)):
       pyautogui.click()
       time.sleep(0.1)
-  event.fuck_fine()
+#  event.fuck_fine()
   check_event()
 
 
@@ -88,18 +83,23 @@ def check_event():
   witch_exist2, witch_x, witch_y = base.scan('witch2')
   rat_exist, rat_x, rat_y = base.scan('rat')
   crow_exist, crow_x, crow_y = base.scan('crow')
-  print("witch" + str(witch_exist+witch_exist2))
-  print("bird" + str(bird_exist))
-  print("tv" + str(tv_exist))
-  print("rat" + str(rat_exist))
-  print("crow" + str(crow_exist))
+  # print("witch" + str(witch_exist+witch_exist2))
+  # print("bird" + str(bird_exist))
+  # print("tv" + str(tv_exist))
+  # print("rat" + str(rat_exist))
+  # print("crow" + str(crow_exist))
   if witch_exist+witch_exist2 != 0:
-      event.fuck_witch()
+    print("有魔法师，看广告")
+    event.fuck_witch()
   elif bird_exist == 1:
+    print("有鸟，放歌")
     event.fuck_bird()
   elif tv_exist == 1:
+    print("有电视，看广告")
     event.fuck_tv()
   elif rat_exist == 1:
+    print("有老鼠，玩他")
     event.fuck_rat()
   elif crow_exist == 1:
+    print("神秘商人，干他")
     event.fuck_crow()
