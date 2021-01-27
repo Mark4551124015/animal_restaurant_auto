@@ -41,6 +41,7 @@ def allfries():
     time.sleep(0.2)
     garden.pickUpDriedFish()
     move.toRight()
+    time.sleep(1)
 
 def flowers():
     time.sleep(random.randint(5, 30))

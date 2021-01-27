@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import base
+import move
 
 x ,y, r, b = base.first()
 
@@ -24,12 +25,12 @@ potPosition = [
 ]
 
 
-def pickUpDriedFish(mouseMoveSpeed):
+def pickUpDriedFish():
   for items in driedFishPosition:
     move.click(items[0], items[1])
 
 
-def sowFlower(mouseMoveSpeed):
+def sowFlower():
   for items in potPosition:
     move.click(items[0], items[1])
     time.sleep(0.5)
