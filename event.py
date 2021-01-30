@@ -70,7 +70,8 @@ def fuck_rat():
     pyautogui.click()
     time.sleep(0.2)
     move.click(120,300)
-
+    time.sleep(5)
+    move.click(no[0],no[1])
 def fuck_witch():
     move.click(witchPosition[0], witchPosition[1])
     adv()

@@ -46,7 +46,7 @@ def allfries():
 def flowers():
     time.sleep(random.randint(5, 30))
     move.toLeft()
-    garden.sowFlower(mouseMoveSpeed)
+    garden.sowFlower()
     move.toRight()
 
 
